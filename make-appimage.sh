@@ -3,7 +3,7 @@
 set -eu
 
 ARCH=$(uname -m)
-VERSION=$(pacman -Q flacon | awk '{print $2; exit}') # example command to get version of application here
+VERSION=$(pacman -Q flacon | awk '{print $2; exit}')
 export ARCH VERSION
 export OUTPATH=./dist
 export ADD_HOOKS="self-updater.hook"
@@ -26,8 +26,6 @@ quick-sharun /usr/bin/flacon \
   /usr/bin/sox \
   /usr/bin/wavpack \
   /usr/bin/wvunpack
-
-# Additional changes can be done in between here
 
 # Turn AppDir into AppImage
 quick-sharun --make-appimage
